@@ -1,0 +1,502 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <title>gskinner - gskinner</title>
+        <script>
+		if (BrowserDetect.isLessThanIEVersion(10) || BrowserDetect.isLessThanIOSVersion(7)) {
+				window.location.href = "upgrade";
+		} else {
+			// Set application scope
+			window.gsite = {
+				strings: null,
+				appData: null,
+			};
+		}
+        function init () {
+	        var scope = window.gsite;
+
+			// Store a reference to the currentPage div on our namespace to reduce DOM lookups:
+			scope.currentPageEl = document.getElementById("currentPage");
+
+	        // touch detection
+	        if (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)) {
+		        scope.touchEnabled = true;
+		        document.body.classList.add("touch");
+				window.addEventListener("mousemove", function(){
+					window.removeEventListener("mousemove", arguments.callee);
+					document.body.classList.add("mouseUI");
+				});
+	        } else {
+		        scope.touchEnabled = false;
+	        }
+
+			// The panel used in most navigation transitions:
+	        scope.TransitionPanel.setup(document.getElementById("transitionPanel"));
+
+            // Initialize our main application file:
+            var app = new scope.Application();
+
+			// Global breakpoint event dispatcher:
+	        scope.BreakPointUtil.setup();
+
+			// Set copyright date to current year:
+			document.getElementById("footer_copyright_text").innerHTML =  "<span class='footer_copyright_symbol'>&copy;</span>" + new Date().getFullYear() + " gskinner";
+
+			// Buttons:
+			new scope.NavigationButton({el: document.getElementById("gLogo-footer")});
+	        scope.HeaderLogo.setup(document.getElementById("gLogo-header"));
+
+        }
+        $(init);</script>
+        <div id="currentPage" style="min-height: 518px;"><div id="homePageView" class="currentPage_content"><div id="home_intro" class="panel in">
+    <div class="panel_art in"><div class="video" style="height:100%;">
+
+<video preload="auto" src="/site/assets/resources/introPanel.mp4" webboost_found_paused="true" webboost_processed="true" loop="" width="917" height="516" style="position: absolute;" webboost_videoid="1" webboost_userplayed="true"></video></div></div>
+    <div class="panel_spinner spinner-cubeWrap out remove" data-percent="">
+    <div class="spinner-cube">
+        <div class="spinner-cube_face face-1">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-2">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-3">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-4">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-5">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-6">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+    </div>
+</div>
+    <div class="panel_copy sticky stuck bottom" style="">
+        <h1 class="panel_heading in">Digital Innovators</h1>
+        
+        <p class="panel_description in">
+            When it comes to delivering bleeding edge digital solutions, top brands in technology, sports, and entertainment trust our team of designers, developers, and strategic thinkers to get the job done.
+        </p>
+         <!-- Needs to accept images or text -->
+        <a href="showcase" id="" class="button-default default in" data-label="project showcase" style="" target="_blank"></a>
+    </div><div class="panel_copy sticky-reference"></div>
+</div><div id="home_SERVICES" class="panel in">
+    <div class="panel_art in"></div>
+    <div class="panel_spinner spinner-cubeWrap out remove" data-percent="">
+    <div class="spinner-cube">
+        <div class="spinner-cube_face face-1">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-2">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-3">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-4">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-5">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-6">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+    </div>
+</div>
+    <div class="panel_copy sticky stuck top">
+        <h1 class="panel_heading in">Dependably Creative</h1>
+        
+        <p class="panel_description in">
+            Our clients choose us for our innovation, and stay for our ability to successfully deliver on time and budget. In 15 years and hundreds of challenging projects, we haven’t had one major hiccup.
+        </p>
+         <!-- Needs to accept images or text -->
+        <a href="ourcompany" id="ourCompany" class="button-default default in" data-label="More about us" style="" target="_blank"></a>
+    </div>
+</div><div id="showcaseCarousel" class="carousel in" data-mode="verticals" style="height: 516px;">
+    <div id="panelPreload" class="panel"><div id="home_VR" class="panel in">
+    <div class="panel_art in"></div>
+    <div class="panel_spinner spinner-cubeWrap out remove" data-percent="">
+    <div class="spinner-cube">
+        <div class="spinner-cube_face face-1">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-2">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-3">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-4">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-5">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-6">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+    </div>
+</div>
+    <div class="panel_copy sticky stuck">
+        <h1 class="panel_heading in">Virtual Reality</h1>
+        
+        <p class="panel_description in">
+            We have the skills to deliver a wide range of innovative VR experiences to your customers—from stories to games, tools and more. Now’s the time to showcase your brand in a whole new way.
+        </p>
+         <!-- Needs to accept images or text -->
+        <a href="holoball" id="holoball" class="button-default default in" data-label="HoloBall" style="" target="_blank"></a>
+    </div>
+</div><div id="home_DIGITAL" class="panel in">
+    <div class="panel_art in"></div>
+    <div class="panel_spinner spinner-cubeWrap out remove" data-percent="">
+    <div class="spinner-cube">
+        <div class="spinner-cube_face face-1">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-2">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-3">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-4">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-5">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-6">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+    </div>
+</div>
+    <div class="panel_copy sticky stuck">
+        <h1 class="panel_heading in">Digital Experiences</h1>
+        
+        <p class="panel_description in">
+            You want your customers to have a connection to your brand that is unlike any other. We can create that with unique experiences that generate interest and leave a lasting impression.
+        </p>
+         <!-- Needs to accept images or text -->
+        <a href="technitone" id="technitone" class="button-default default in" data-label="Technitone" style="" target="_blank"></a>
+    </div>
+</div><div id="home_WEB" class="panel in">
+    <div class="panel_art in"></div>
+    <div class="panel_spinner spinner-cubeWrap out remove" data-percent="">
+    <div class="spinner-cube">
+        <div class="spinner-cube_face face-1">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-2">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-3">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-4">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-5">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-6">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+    </div>
+</div>
+    <div class="panel_copy sticky stuck">
+        <h1 class="panel_heading in">Web Solutions</h1>
+        
+        <p class="panel_description in">
+            The online world lets you reach an endless audience, making it the perfect medium for us to create killer apps, exciting games and engaging experiences on any screen, at any time—anywhere.
+        </p>
+         <!-- Needs to accept images or text -->
+        <a href="camp" id="golife" class="button-default default in" data-label="CAMP Festival" style="" target="_blank"></a>
+    </div>
+</div><div id="home_NATIVEAPP" class="panel in">
+    <div class="panel_art in"></div>
+    <div class="panel_spinner spinner-cubeWrap out remove" data-percent="">
+    <div class="spinner-cube">
+        <div class="spinner-cube_face face-1">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-2">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-3">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-4">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-5">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-6">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+    </div>
+</div>
+    <div class="panel_copy sticky stuck">
+        <h1 class="panel_heading in">Native Apps</h1>
+        
+        <p class="panel_description in">
+            We design and develop world-class native applications that deliver exceptional performance and bring brands to every platform, including mobile, tablet, console, and desktop.
+        </p>
+         <!-- Needs to accept images or text -->
+        <a href="nascar" id="nascar" class="button-default default in" data-label="NASCAR" style="" target="_blank"></a>
+    </div>
+</div><div id="home_TOOLS" class="panel in">
+    <div class="panel_art in"></div>
+    <div class="panel_spinner spinner-cubeWrap out remove" data-percent="">
+    <div class="spinner-cube">
+        <div class="spinner-cube_face face-1">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-2">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-3">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-4">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-5">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-6">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+    </div>
+</div>
+    <div class="panel_copy sticky stuck">
+        <h1 class="panel_heading in">Customized Tools</h1>
+        
+        <p class="panel_description in">
+            Make the implausible possible with tools designed to take on your unique challenges. We’ll work with you to assess your specific needs, then create custom tools to deliver results.
+        </p>
+         <!-- Needs to accept images or text -->
+        <a href="iss" id="iss" class="button-default default in" data-label="Dragon Age ISS" style="" target="_blank"></a>
+    </div>
+</div></div>
+
+	<!-- Navigation for normal + mobile verticals carousel -->
+	<a class="carousel_next">
+    	<span class="carousel_next-button" data-label="Virtual Reality"></span>
+    	<span class="carousel_next-hint"></span>
+    </a>
+    <a class="carousel_prev">
+    	<span class="carousel_prev-button" data-label="Custom Workflows"></span>
+    	<span class="carousel_prev-hint"></span>
+    </a>
+    <div class="carousel_pagination"><a class="carousel_pagination_item in selected"></a><a class="carousel_pagination_item in"></a><a class="carousel_pagination_item in"></a><a class="carousel_pagination_item in"></a><a class="carousel_pagination_item in"></a><a class="carousel_pagination_item in"></a></div>
+
+	<!-- Navigation for desktop verticals carousel -->
+    
+<div class="carousel_panel-viewport current"><div id="home_CODELIBRARIESFLUTTER" class="carousel_panel-content panel in">
+    <div class="panel_art in"></div>
+    <div class="panel_spinner spinner-cubeWrap out remove" data-percent="">
+    <div class="spinner-cube">
+        <div class="spinner-cube_face face-1">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-2">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-3">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-4">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-5">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-6">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+    </div>
+</div>
+    <div class="panel_copy sticky stuck top">
+        <h1 class="panel_heading in">Libraries &amp; Frameworks</h1>
+        
+        <p class="panel_description in">
+            To solve difficult challenges we create approachable, modular, and extensible tools to keep the industry—and our clients—moving forward.
+        </p>
+         <!-- Needs to accept images or text -->
+        <a href="flutter" id="flutter" class="button-default default in" data-label="The Flutter Vignettes" style="" target="_blank"></a>
+    </div>
+</div></div><div id="verticalsNavigation" class="verticals_navigation" data-panel="home_CODELIBRARIESFLUTTER" data-title="Areas of Expertise"><div class="verticals_navigation_item active">
+	<div class="verticals_navigation_item-label">Libraries &amp; Frameworks
+		<div class="verticals_navigation_item-progress in">
+			<div style="transform: scaleX(0.663666);"></div>
+		</div>
+	</div>
+</div><div class="verticals_navigation_item">
+	<div class="verticals_navigation_item-label">Virtual Reality
+		<div class="verticals_navigation_item-progress">
+			<div style="transform: scaleX(0.00607226);"></div>
+		</div>
+	</div>
+</div><div class="verticals_navigation_item">
+	<div class="verticals_navigation_item-label">Digital Experiences
+		<div class="verticals_navigation_item-progress">
+			<div style="transform: scaleX(0.933033);"></div>
+		</div>
+	</div>
+</div><div class="verticals_navigation_item">
+	<div class="verticals_navigation_item-label">Web Solutions
+		<div class="verticals_navigation_item-progress">
+			<div style="transform: scaleX(0.880261);"></div>
+		</div>
+	</div>
+</div><div class="verticals_navigation_item">
+	<div class="verticals_navigation_item-label">Native Apps
+		<div class="verticals_navigation_item-progress">
+			<div style="transform: scaleX(0.893713);"></div>
+		</div>
+	</div>
+</div><div class="verticals_navigation_item">
+	<div class="verticals_navigation_item-label">Customized Tools
+		<div class="verticals_navigation_item-progress">
+			<div style="transform: scaleX(0.159359);"></div>
+		</div>
+	</div>
+</div></div></div><div id="home_03" class="panel in">
+    <div class="panel_art in"></div>
+    <div class="panel_spinner spinner-cubeWrap out remove" data-percent="">
+    <div class="spinner-cube">
+        <div class="spinner-cube_face face-1">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-2">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-3">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-4">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-5">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-6">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+    </div>
+</div>
+    <div class="panel_copy sticky stuck top">
+        <h1 class="panel_heading in">Let’s Chat</h1>
+        
+        <p class="panel_description in">
+            We love what we do—a lot. This passion has enabled us to work with some of the world’s top agencies and clients. Talk to us today to find out how we can apply our passion to your next project.
+        </p>
+         <!-- Needs to accept images or text -->
+        <a href="mailto:hello@gskinner.com?subject=Hello gskinner." id="ourcompany_btn" class="button-default default in" data-label="Say Hello" style="" target="_blank"></a>
+    </div>
+</div><div id="home_LAB" class="panel in">
+    <div class="panel_art in"><div class="video" style="height:100%;">
+
+<video preload="auto" src="/site4/assets/images/home/LabPanel.mp4" webboost_found_paused="true" webboost_processed="true" loop="" width="917" height="516" style="position: absolute;" webboost_videoid="0"></video></div></div>
+    <div class="panel_spinner spinner-cubeWrap out remove" data-percent="">
+    <div class="spinner-cube">
+        <div class="spinner-cube_face face-1">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-2">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-3">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-4">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-5">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-6">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+    </div>
+</div>
+    <div class="panel_copy sticky stuck top">
+        <h1 class="panel_heading in">Practicing Our Craft</h1>
+        
+        <p class="panel_description in">
+            We’ve always been huge believers in exploring and experimenting with new technologies, ideas and trends. This helps us continually develop our skills and push the limits for our clients.
+        </p>
+         <!-- Needs to accept images or text -->
+        <a href="http://lab.gskinner.com" id="theLab" class="button-default default in" data-label="The Lab" style="" target="_blank"></a>
+    </div>
+</div><div id="home_06" class="panel in">
+    <div class="panel_art in"></div>
+    <div class="panel_spinner spinner-cubeWrap out remove" data-percent="">
+    <div class="spinner-cube">
+        <div class="spinner-cube_face face-1">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-2">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-3">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-4">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-5">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+        <div class="spinner-cube_face face-6">
+            <div class="spinner-cube_progressBar" style=""></div>
+        </div>
+    </div>
+</div>
+    <div class="panel_copy sticky stuck top">
+        <h1 class="panel_heading in">Join the Team</h1>
+        
+        <p class="panel_description in">
+            If you like creating awesome, innovative solutions for smart companies and collaborating with a fun and super talented team, we’d love to hear from you.
+        </p>
+         <!-- Needs to accept images or text -->
+        <a href="careers" id="careers" class="button-default default in" data-label="Careers at gskinner" style="" target="_blank"></a>
+    </div>
+</div></div><noscript><style>#footer, .gLogo_skinnerWrap { opacity: 1 !important; transform: none !important; }
+				body { background-color: #101010; }
+				#navPanel, #navToggle, #navContent { display: none; !important; }</style><div id="home_00" class="panel in"><div class="panel_art noscript in"></div><div class="panel_copy in"><h1 class="panel_heading in">Smart Solutions for Smart Companies</h1><p class="panel_description in">We collaborate with smart, motivated clients to conceptualize, design, and build world-class interactive experiences.<br><br><em>To view the full site, please enable JavaScript in your browser.</em></p><a href="mailto:hello@gskinner.com" class="button-default default in">Contact Us<span class="button_icon-arrow"></span></a></div></div></noscript></div><div id="footer" class="in"><div id="footer_cta" class="footer_col"><a href="/" id="gLogo-footer"><svg class="gLogo_g"><use xlink:href="#gLogo_g"></use></svg><div class="gLogo_skinnerWrap"><svg class="gLogo_skinner"><use xlink:href="#gLogo_skinner"></use></svg></div></a></div><div id="footer_links" class="footer_col"><a href="mailto:hello@gskinner.com" class="footer_link"><svg class="footer_link_icon icon-email"><use xlink:href="#icon-email"></use></svg>hello@gskinner.com</a> <a href="https://twitter.com/gskinner_team" class="footer_link"><svg class="footer_link_icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>@gskinner_team</a> <a href="http://blog.gskinner.com" class="footer_link"><svg class="footer_link_icon icon-blog"><use xlink:href="#icon-blog"></use></svg>gBlog</a></div><div id="footer_contactInfo" class="footer_col"><a href="tel:17806374720" class="footer-phone">+1 780 637 4720</a><br><p class="footer-worldwide">servicing clients worldwide</p><div class="footer-address"><p>10665 Jasper Avenue<br>Suite 1400<br>Edmonton, AB T5J 3S9<br>Canada</p></div></div><div id="footer_copyright" class=""><p id="footer_copyright_text"><span class="footer_copyright_symbol">©</span>2023 gskinner</p></div></div><a href="/" id="gLogo-header" class=""><svg class="gLogo_g" style="fill: rgb(255, 255, 255);"><use xlink:href="#gLogo_g"></use></svg><div class="gLogo_skinnerWrap in"><svg class="gLogo_skinner" style="fill: rgb(255, 255, 255);"><use xlink:href="#gLogo_skinner"></use></svg></div></a><div id="navPanel" class=""></div><div id="navContent" class="remove">
+	<!-- <a href="/" id="gLogo-nav" class="navChild">
+		<svg class="gLogo_g">
+			<use xlink:href="#gLogo_g"></use>
+		</svg>
+		<div class="gLogo_skinnerWrap">
+			<svg class="gLogo_skinner">
+				<use xlink:href="#gLogo_skinner"></use>
+			</svg>
+		</div>
+	</a> -->
+	<h1 class="navHeading navChild">Showcase<a href="showcase" class="navHeading_link">Browse</a></h1>
+	<hr class="navDivider navChild">
+
+
+	<a href="https://flutter.gskinner.com/wonderous" class="navChild navLink externalTransition">Wonderous<span class="navLink_flourish"></span><span class="icon"></span></a><a href="multiplatformflutter" class="navChild navLink">Multi-Platform Flutter<span class="navLink_flourish"></span><span class="icon"></span></a><a href="flutter" class="navChild navLink">The Flutter Vignettes<span class="navLink_flourish"></span><span class="icon"></span></a><a href="camp" class="navChild navLink">CAMP Festival<span class="navLink_flourish"></span><span class="icon"></span></a><a href="holoball" class="navChild navLink">HoloBall VR<span class="navLink_flourish"></span><span class="icon"></span></a><a href="nascar" class="navChild navLink">NASCAR<span class="navLink_flourish"></span><span class="icon"></span></a><a href="iss" class="navChild navLink">Dragon Age ISS<span class="navLink_flourish"></span><span class="icon"></span></a>
+
+	<h1 class="navHeading navChild">About</h1>
+	<hr class="navDivider navChild">
+
+	<a href="ourcompany" class="navChild navLink">Our Company<span class="navLink_flourish"></span><span class="icon"></span></a>
+	<a href="https://lab.gskinner.com" class="navChild navLink externalTransition">Lab<span class="navLink_flourish"></span><span class="icon"></span></a>
+	<a href="http://blog.gskinner.com" class="navChild navLink externalTransition">Blog<span class="navLink_flourish"></span><span class="icon"></span></a>
+
+	<h1 class="navHeading navChild">Work with Us</h1>
+	<hr class="navDivider navChild">
+
+	<a href="mailto:hello@gskinner.com" class="navChild navLink">hello@gskinner.com<span class="navLink_flourish"></span><span class="icon"></span></a>
+	<a href="careers" class="navChild navLink">Careers<span class="navLink_flourish"></span><span class="icon"></span></a>
+
+</div><div id="navToggle"><div id="navIcon" class="default"><span id="navIcon_topBar"></span><span id="navIcon_bottomBar"></span></div></div><div id="preloadjs-container" style="visibility: hidden; position: absolute; height: 10px; width: 10px; overflow: hidden; transform: translate(-10px, -10px);"></div><div class="Pc_Booster_Auto_Play_Tab_Banner" webboost_bannerid="0" style="width: 280px; height: 43px; margin: 10px; position: absolute; top: 2304px; left: 0px; z-index: 2147483647; cursor: pointer; opacity: 0.85;"><div style="height: 100%; background-image: url(&quot;chrome-extension://lamehkegphbbfdailghaeeleoajilfho/images/video-notification-banner.png&quot;); background-repeat: no-repeat; background-size: contain; display: flex; align-items: center; padding-right: 10px; padding-left: 46px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(255, 255, 255);">Paused by McAfee® Web Boost</div></div></body></html>
